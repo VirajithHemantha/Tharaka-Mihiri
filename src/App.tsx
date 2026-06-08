@@ -4,29 +4,29 @@ import { Sparkles, MapPin, Calendar, Clock, Send, ChevronDown } from "lucide-rea
 
 const INVITATION = {
   couple: {
-    bride: "සංජනා",
-    groom: "කවිඳු",
-    brideFull: "සංජනා අනුරාධා",
-    groomFull: "කවිඳු මධුසංඛ",
+    bride: "ලක්ෂාණි",
+    groom: "රාහුල්",
+    brideFull: "ලක්ෂාණි",
+    groomFull: "රාහුල්",
   },
   date: {
-    displayNumeric: "28 . 06 . 2026",
-    displayLong: "ඉරිදා, 28 ජූනි 2026",
-    countdownTarget: "2026-06-28T10:30:00+05:30",
+    displayNumeric: "30 . 07 . 2026",
+    displayLong: "බ්‍රහස්පතින්දා, 30 ජූලි 2026",
+    countdownTarget: "2026-07-30T10:00:00+05:30",
   },
   time: {
-    ceremonyStart: "පෙ.ව. 10:30",
-    ceremonyEnd: "පෙ.ව. 11:30",
-    registration: "පෙ.ව. 11:45",
+    ceremonyStart: "පෙ.ව. 10:00",
+    ceremonyEnd: "ප.ව. 03:30",
+    registration: "පෙ.ව. 10:45",
     welcome: "දහවල් 12:30",
   },
   venue: {
-    name: "සැනයා මෑන්ෂන් හෝටලය",
-    city: "මාතර",
-    mapQuery: "Sanaya Mansion Hotel, Matara",
-    googleMapsLink: "https://www.google.com/maps/search/?api=1&query=Sanaya+Mansion+Hotel+Matara",
+    name: "Alora hotel & Family restaurant",
+    city: "Nugawela",
+    mapQuery: "Alora hotel & Family restaurant, Nugawela",
+    googleMapsLink: "https://www.google.com/maps/search/?api=1&query=Alora+hotel+Family+restaurant+Nugawela",
   },
-  rsvpContacts: ["කවිඳු: 0714713800", "සංජනා: 071-XXXXXXX", "පවුල: 071-XXXXXXX"],
+  rsvpContacts: ["රාහුල්: 071-XXXXXXX", "ලක්ෂාණි: 071-XXXXXXX", "පවුල: 071-XXXXXXX"],
 } as const;
 
 const backgroundMusic = "/Brooklyn Duo - A Thousand Years [WEDDING VERSION].mp3";
@@ -561,14 +561,14 @@ export default function WeddingInvitation() {
 
                       <div className="flex flex-col items-center justify-center gap-2">
                         <span className="text-sm md:text-base tracking-wider text-slate-700">
-                          එම්. ඒ. කේ. අනුර මැතිතුමාගේ සහ එම මැතිනියගේ ආදරණීය දියණිය
+                          වසන්ත විජේසිරි මැතිතුමාගේ සහ එම මැතිනියගේ ආදරණීය දියණිය
                         </span>
                         <span className="text-xl md:text-2xl font-bold text-[#0284c7] my-1">
                           {INVITATION.couple.brideFull}
                         </span>
                         <span className="text-2xl text-[#0284c7] italic my-2">සමඟ</span>
                         <span className="text-sm md:text-base tracking-wider text-slate-700">
-                          ආර්. ඩබ්. දයානන්ද මැතිතුමාගේ සහ එම මැතිනියගේ ආදරණීය පුතණුවන්
+                          ගාමිණී රත්නසිරි මැතිතුමාගේ සහ එම මැතිනියගේ ආදරණීය පුතණුවන්
                         </span>
                         <span className="text-xl md:text-2xl font-bold text-[#0284c7] my-1">
                           {INVITATION.couple.groomFull}
@@ -717,10 +717,8 @@ export default function WeddingInvitation() {
                 <div className="mx-auto max-w-2xl w-full text-left bg-white border border-[#7dd3fc]/40 shadow-[0_30px_70px_-20px_rgba(45,90,39,0.1)] rounded-[2rem]">
                   <div className="p-8 md:p-12 space-y-8">
                     {[
-                      ["පෝරු උත්සවය ආරම්භය", INVITATION.time.ceremonyStart],
-                      ["පෝරු උත්සවය අවසානය", INVITATION.time.ceremonyEnd],
-                      ["විවාහ ලියාපදිංචිය", INVITATION.time.registration],
-                      ["යුවළගේ පිළිගැනීම", INVITATION.time.welcome],
+                      ["පෝරු උත්සවය", INVITATION.time.ceremonyStart],
+                      ["උත්සවය අවසානය", INVITATION.time.ceremonyEnd],
                     ].map(([title, time]) => (
                       <div key={title} className="flex items-start gap-4">
                         <div className="w-10 h-10 rounded-full border border-[#0284c7]/20 flex items-center justify-center shrink-0">
@@ -1070,18 +1068,6 @@ export default function WeddingInvitation() {
                   </div>
                 </motion.div>
 
-                <div className="mt-32 flex flex-col items-center gap-6 text-center w-full max-w-xl">
-                  <div className="h-px w-24 bg-slate-300" />
-                  <p className="text-slate-500 text-[10px] tracking-[0.4em] font-bold mt-2">
-                    සම්බන්ධතා
-                  </p>
-
-                  <div className="flex flex-wrap justify-center gap-x-10 gap-y-4 text-slate-500 text-[10px] md:text-sm tracking-widest font-normal opacity-80 decoration-slate-300 underline-offset-4">
-                    {INVITATION.rsvpContacts.map((line) => (
-                      <p key={line}>{line}</p>
-                    ))}
-                  </div>
-                </div>
               </div>
             </section>
 
@@ -1134,7 +1120,7 @@ export default function WeddingInvitation() {
 
                     <form className="space-y-16 text-left relative z-10" onSubmit={handleWishSubmit}>
                       <div className="space-y-6 group">
-                        <label className="text-[10px] tracking-[0.4em] font-bold text-[#0369a1]/40 group-focus-within:text-[#0284c7] transition-colors">
+                        <label className="text-sm tracking-[0.4em] font-bold text-[#0369a1]/40 group-focus-within:text-[#0284c7] transition-colors">
                           ඔබගේ නම
                         </label>
                         <div className="relative">
@@ -1146,7 +1132,7 @@ export default function WeddingInvitation() {
                               setWishStatus("idle");
                               setWishForm((prev) => ({ ...prev, name: e.target.value }));
                             }}
-                            className="w-full bg-transparent border-b border-[#7dd3fc]/60 px-0 py-4 text-[#0369a1] placeholder:text-[#7dd3fc]/30 focus:outline-none focus:border-[#0369a1] transition-all text-xl tracking-widest font-numeric"
+                            className="w-full bg-transparent border-b border-[#7dd3fc]/60 px-0 py-4 text-[#0369a1] placeholder:text-[#7dd3fc]/30 focus:outline-none focus:border-[#0369a1] transition-all text-base tracking-widest font-numeric"
                             required
                           />
                           <div className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#0369a1] transition-all duration-500 group-focus-within:w-full" />
@@ -1154,7 +1140,7 @@ export default function WeddingInvitation() {
                       </div>
 
                       <div className="space-y-6 group">
-                        <label className="text-[10px] tracking-[0.4em] font-bold text-[#0369a1]/40 group-focus-within:text-[#0284c7] transition-colors">
+                        <label className="text-sm tracking-[0.4em] font-bold text-[#0369a1]/40 group-focus-within:text-[#0284c7] transition-colors">
                           ඔබගේ පණිවිඩය
                         </label>
                         <div className="relative">
@@ -1166,7 +1152,7 @@ export default function WeddingInvitation() {
                               setWishStatus("idle");
                               setWishForm((prev) => ({ ...prev, message: e.target.value }));
                             }}
-                            className="w-full bg-transparent border-b border-[#7dd3fc]/60 px-0 py-4 text-[#0369a1] placeholder:text-[#7dd3fc]/30 focus:outline-none focus:border-[#0369a1] transition-all text-lg tracking-widest resize-none leading-relaxed font-numeric"
+                            className="w-full bg-transparent border-b border-[#7dd3fc]/60 px-0 py-4 text-[#0369a1] placeholder:text-[#7dd3fc]/30 focus:outline-none focus:border-[#0369a1] transition-all text-sm tracking-widest resize-none leading-relaxed font-numeric"
                             required
                           />
                           <div className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#0369a1] transition-all duration-500 group-focus-within:w-full" />
@@ -1214,7 +1200,7 @@ export default function WeddingInvitation() {
                 style={{ backgroundImage: `url("${encodeURI(DETAILS_BACKGROUND_IMAGE)}")` }}
                 aria-hidden="true"
               />
-              <div className="container mx-auto px-6 max-w-5xl text-center">
+              <div className="container mx-auto px-6 max-w-5xl text-center relative z-10">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
