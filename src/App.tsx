@@ -31,7 +31,7 @@ const INVITATION = {
 
 const backgroundMusic = "/Ve Kamleya - Flute Cover by Divyansh Shrivastava   Instrumental  Arijit Singh  Shreya Ghoshal.mp3";
 const googleScriptUrl =
-  "https://script.google.com/macros/s/AKfycbw3f4cbJzxOlp5p5EMcg8m-TXZjcy7v2TkdqQUfoUA2CgV1Zl_YURgdMHQuVlTMBDu86w/exec";
+  "https://script.google.com/macros/s/AKfycbzXg4YvUjhJDOro8CGo2ZBUJ_SOJP0h6IYUPtARW2SVyNM5vJe94p801nFcdCiRVHgmFg/exec";
 
 const HERO_BACKGROUND_IMAGE = "/ChatGPT Image May 22, 2026, 12_24_57 AM.png";
 const DETAILS_BACKGROUND_IMAGE = "/ChatGPT Image May 22, 2026, 12_26_02 AM.png";
@@ -1088,7 +1088,11 @@ export default function WeddingInvitation() {
                             setRsvpForm((prev) => ({ ...prev, guests: "1" }));
                           }}
                           aria-pressed={rsvpForm.guests !== "0"}
-                          className="w-full bg-[#f3f3f3] hover:bg-slate-200 text-slate-700 py-5 md:py-6 rounded-xl text-[11px] md:text-sm tracking-wide transition-all shadow-sm flex items-center justify-center px-4 leading-relaxed active:scale-[0.98]"
+                          className={`w-full py-5 md:py-6 rounded-xl text-[11px] md:text-sm tracking-wide transition-all shadow-sm flex items-center justify-center px-4 leading-relaxed active:scale-[0.98] ${
+                            rsvpForm.guests !== "0"
+                              ? "bg-[#8C5F2B] text-white ring-2 ring-offset-2 ring-[#8C5F2B]"
+                              : "bg-[#f3f3f3] hover:bg-slate-200 text-slate-700"
+                          }`}
                         >
                           Yes, I will joyfully attend!
                         </button>
@@ -1100,7 +1104,11 @@ export default function WeddingInvitation() {
                             setRsvpForm((prev) => ({ ...prev, guests: "0" }));
                           }}
                           aria-pressed={rsvpForm.guests === "0"}
-                          className="w-full bg-[#f3f3f3] hover:bg-slate-200 text-slate-700 py-5 md:py-6 rounded-xl text-[11px] md:text-sm tracking-wide transition-all shadow-sm flex items-center justify-center px-4 leading-relaxed active:scale-[0.98]"
+                          className={`w-full py-5 md:py-6 rounded-xl text-[11px] md:text-sm tracking-wide transition-all shadow-sm flex items-center justify-center px-4 leading-relaxed active:scale-[0.98] ${
+                            rsvpForm.guests === "0"
+                              ? "bg-[#8C5F2B] text-white ring-2 ring-offset-2 ring-[#8C5F2B]"
+                              : "bg-[#f3f3f3] hover:bg-slate-200 text-slate-700"
+                          }`}
                         >
                           Sorry, I cannot attend. But my blessings are with you.
                         </button>
@@ -1288,9 +1296,14 @@ export default function WeddingInvitation() {
                     We look forward to celebrating our special day with you.
                   </p>
 
-                  <p className="text-[10px] md:text-xs tracking-[0.5em] text-[#8C5F2B]/50 font-bold">
-                    © 2026 {INVITATION.couple.bride} and {INVITATION.couple.groom}
-                  </p>
+                  <div className="space-y-4">
+                    <p className="text-[10px] md:text-xs tracking-[0.5em] text-[#8C5F2B]/50 font-bold">
+                      © 2026 {INVITATION.couple.bride} and {INVITATION.couple.groom}
+                    </p>
+                    <p className="text-[9px] md:text-[10px] tracking-widest text-black font-bold">
+                      Designed by Invitemint - <a href="https://wa.me/94707819074" target="_blank" rel="noopener noreferrer" className="hover:text-[#9E7339] transition-colors underline underline-offset-2">+94707819074</a>
+                    </p>
+                  </div>
                 </motion.div>
               </div>
             </section>
